@@ -68,7 +68,6 @@ PORTA=$(cat xhrmasjsdh$IP | head -n$i | tail -n1)
 if [ -n "$PORTA" ]
 then
 echo
-echo "IP => $IP"
 nmap -sV -Pn -p $PORTA $IP | grep "tcp"
 fi
 done
