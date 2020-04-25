@@ -117,6 +117,7 @@ principal
 
 openports () {
 read -p "How many IPs do you want to check between 1-254? " NUMBERIPS
+echo
 if ! [[ "$NUMBERIPS" =~ ^[0-9]+$ ]]
 then
 openports
