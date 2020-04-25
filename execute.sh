@@ -64,11 +64,11 @@ fi
 LINES=$(wc -l xhrmasjsdh$IP | cut -d ' ' -f1)
 for i in `seq 1 $LINES`
 do
-PORTA=$(cat xhrmasjsdh$IP | head -n$i | tail -n1)
-if [ -n "$PORTA" ]
+PORT=$(cat xhrmasjsdh$IP | head -n$i | tail -n1)
+if [ -n "$PORT" ]
 then
 echo
-nmap -sV -Pn -p $PORTA $IP | grep "tcp"
+echo "Port $PORT is open"
 fi
 done
 rm -rf xhrmasjsdh$IP
@@ -95,18 +95,18 @@ fi
 if [ -n "$NMAPSS" ]
 then
 echo "$NMAPSS" >> xhrmasjsdh$IPscan
+echo "IP => $IPscan"
 else
 continue
 fi
 LINESS=$(wc -l xhrmasjsdh$IPscan | cut -d ' ' -f1)
 	for numm in `seq 1 $LINESS`
 	do
-	PORTA=$(cat xhrmasjsdh$IPscan | head -n$numm | tail -n1)
-	if [ -n "$PORTA" ]
+	PORT=$(cat xhrmasjsdh$IPscan | head -n$numm | tail -n1)
+	if [ -n "$PORT" ]
 	then
 	echo
-	echo "IP => $IPscan"
-	nmap -sV -Pn -p $PORTA $IPscan | grep "tcp"
+	echo "Port $PORT is open"
 	fi
 	done
 	rm -rf xhrmasjsdh*
@@ -143,6 +143,7 @@ for i in `seq 1 $NUMBERIPS`
 		NMAPSS=$(nmap -sS -Pn $IPscan | grep "open" | cut -d "/" -f1)
 		if [ -n "$NMAPSS" ]
 		then
+		echo "IP => $IPscan"
 		echo "$NMAPSS" >> xhrmasjsdh$IPscan
 		else
 		continue
@@ -150,11 +151,10 @@ for i in `seq 1 $NUMBERIPS`
 		LINESS=$(wc -l xhrmasjsdh$IPscan | cut -d ' ' -f1)
 		for k in `seq 1 $LINESS`
 			do
-			PORTA=$(cat xhrmasjsdh$IPscan | head -n$k | tail -n1)
-			if [ -n "$PORTA" ]
+			PORT=$(cat xhrmasjsdh$IPscan | head -n$k | tail -n1)
+			if [ -n "$PORT" ]
 			then
-			echo "IP => $IPscan"
-			nmap -sV -Pn -p $PORTA $IPscan | grep "tcp"
+			echo "Port $PORT is open"
 			fi
 			done
 		done
