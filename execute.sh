@@ -55,6 +55,7 @@ fi
 NMAPSS=$(nmap -sS -Pn $IP | grep "open")
 if [ -n "$NMAPSS" ]
 then
+echo
 echo "$NMAPSS" >> xhrmasjsdh$IP
 else
 echo
@@ -161,6 +162,7 @@ for i in `seq 1 $NUMBERIPS`
 		done
 	rm -rf xhrmasjsdh*
 	rm -rf nmap$RAN.txt
+principal
 }
 
 pc () {
