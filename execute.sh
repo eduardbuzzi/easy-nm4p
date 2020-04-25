@@ -52,7 +52,7 @@ echo
 echo "IP $IP is down."
 principal
 fi
-NMAPSS=$(nmap -sS -Pn $IP | grep "open" | cut -d '/' -f1)
+NMAPSS=$(nmap -sS -Pn $IP | grep "open")
 if [ -n "$NMAPSS" ]
 then
 echo "$NMAPSS" >> xhrmasjsdh$IP
@@ -68,7 +68,7 @@ PORT=$(cat xhrmasjsdh$IP | head -n$i | tail -n1)
 if [ -n "$PORT" ]
 then
 echo
-echo "Port $PORT is open"
+echo "$PORT"
 fi
 done
 rm -rf xhrmasjsdh$IP
