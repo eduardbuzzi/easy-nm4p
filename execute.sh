@@ -68,7 +68,7 @@ PORTA=$(cat xhrmasjsdh$IP | head -n$i | tail -n1)
 if [ -n "$PORTA" ]
 then
 echo
-nmap -sV -Pn -p $PORTA $IP
+nmap -sV -Pn -p $PORTA $IP | grep "tcp"
 fi
 done
 rm -rf xhrmasjsdh$IP
@@ -105,7 +105,7 @@ LINESS=$(wc -l xhrmasjsdh$IPscan | cut -d ' ' -f1)
 	if [ -n "$PORTA" ]
 	then
 	echo
-	nmap -sV -Pn -p $PORTA $IPscan
+	nmap -sV -Pn -p $PORTA $IPscan | grep "tcp"
 	fi
 	done
 	rm -rf xhrmasjsdh*
@@ -152,7 +152,7 @@ for i in `seq 1 $NUMBERIPS`
 			PORTA=$(cat xhrmasjsdh$IPscan | head -n$k | tail -n1)
 			if [ -n "$PORTA" ]
 			then
-			nmap -sV -Pn -p $PORTA $IPscan
+			nmap -sV -Pn -p $PORTA $IPscan | grep "tcp"
 			fi
 			done
 		done
