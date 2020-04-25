@@ -115,7 +115,15 @@ principal
 }
 
 openports () {
-read -p "How many IPs do you wanna scan? " NUMBERIPS
+read -p "How many IPs do you want to check between 1-254? " NUMBERIPS
+if ! [[ "$NUMBERIPS" =~ ^[0-9]+$ ]]
+then
+openports
+fi
+if [ "$NUMBERIPS" -eq 0 ] || [ "$NUMBERIPS" -gt 254 ]
+then
+NUMBERIPS=254
+fi
 RAN=$(shuf -i 10-99 -n1)
 for i in `seq 1 $NUMBERIPS`
 	do
