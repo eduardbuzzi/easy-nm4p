@@ -67,7 +67,6 @@ do
 PORT=$(cat xhrmasjsdh$IP | head -n$i | tail -n1)
 if [ -n "$PORT" ]
 then
-echo
 echo "$PORT"
 fi
 done
