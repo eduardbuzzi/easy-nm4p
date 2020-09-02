@@ -5,7 +5,7 @@ principal () {
 echo
 echo -e "Script \033[01;34measy-nm4p\033[01;00m"
 echo -e "Created by: \033[01;32mEduardo Buzzi\033[01;00m"
-echo -e "More Scripts in: \033[01;31mhttps://github.com/eduardbuzzi\033[01;00m"
+echo -e "More Scripts in: \033[01;31mhttps://github.com/edubuzzi\033[01;00m"
 echo
 echo "[1] Find open ports on this Wi-Fi"
 echo "[2] Find open ports on a Wordlist with IPs"
